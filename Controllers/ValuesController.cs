@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace pizza_shack.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
