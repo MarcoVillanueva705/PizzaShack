@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using pizza_shack.Mock;
 
 namespace pizza_shack.Controllers
 {
@@ -11,22 +12,21 @@ namespace pizza_shack.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-       public List<string> MyValues = new List<string>() {"value1", "value2", "value3"};
 
     // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return MyValues;
+            return fakeDb.MyValues;
         }
 
     //GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            if(id < MyValues.Count)
+            if(id < fakeDb.MyValues.Count)
             {
-                return MyValues[id];
+                return fakeDb.MyValues[id];
             }
             return BadRequest("Index out of range");
         }
@@ -35,8 +35,8 @@ namespace pizza_shack.Controllers
         [HttpPost]
         public ActionResult<IEnumerable<string>> Post([FromBody] string value)
         {
-            MyValues.Add(value);
-            return MyValues;
+            fakeDb.MyValues.Add(value);
+            return fakeDb.MyValues;
         }
 
     }
