@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace pizza_shack.Models
 {
@@ -20,7 +21,12 @@ namespace pizza_shack.Models
         { 
             get
             {
-                return _BasePrice + (decimal) Size;//Size is an enum, have to make dcimal to add
+                return _BasePrice + (decimal)Size + Toppings.Sum(topping => topping.Price);//Size is an enum, have to make dcimal to add
+                        //for every topping on this lists, run this Toppings.Sum method;
+                        //iterate through individual toppings and only return the price, the sum method
+                        //adds it to a running total
+                        //once it's finished we have the total price for all individual toppings and is added
+                        //to the size of the pizza plus the base price
             }
         }
     }
