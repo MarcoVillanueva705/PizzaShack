@@ -33,9 +33,10 @@ namespace pizza_shack.Controllers
 
         //POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<IEnumerable<string>> Post([FromBody] string value)
         {
-
+            MyValues.Add(value);
+            return MyValues;
         }
 
     }
