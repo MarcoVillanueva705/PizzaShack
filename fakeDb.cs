@@ -26,7 +26,14 @@ namespace pizza_shack.Mock
         {
             new Pizza() {
                 Name = "Hawaiian",
-            }
+                Toppings = new List<Topping>() {
+                    AvailToppings.GetValueOrDefault("ham"),
+                    AvailToppings.GetValueOrDefault("pineapple")
+                    //Price is dynamic under Pizza class with {get};
+                    //if we had {set} in the class, price would be static
+                }
+            },
+
         };
 
     }
