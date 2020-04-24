@@ -34,6 +34,22 @@ namespace pizza_shack.Mock
                 }
             },
 
+            new Pizza() {
+                Name= "Pepperoni",
+                Toppings = new List<Topping>() {
+                    AvailToppings.GetValueOrDefault("pepperoni")
+                }
+            },
+
+            new Pizza(){
+                Name= "Meat Lovers",
+                Toppings = new List<Topping>(){
+                    AvailToppings.GetValueOrDefault("ham"),
+                    AvailToppings.GetValueOrDefault("bacon"),
+                    AvailToppings.GetValueOrDefault("pepperoni"),
+                }
+            }
+
         };
 
     }
