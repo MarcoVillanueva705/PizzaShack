@@ -10,7 +10,7 @@ namespace pizza_shack.Controllers
     public class PizzasController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<IEnumerable<Pizza>> GetAction()
+        public ActionResult<IEnumerable<Pizza>> Get()
         {
             return fakeDb.Pizzas;
         }
