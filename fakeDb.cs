@@ -52,5 +52,7 @@ namespace pizza_shack.Mock
 
         };
 
+        public static List<Order> Orders = new List<Order>();
+
     }
 }
