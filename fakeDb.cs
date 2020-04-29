@@ -52,7 +52,14 @@ namespace pizza_shack.Mock
 
         };
 
-        public static List<Order> Orders = new List<Order>();
+        public static List<Order> Orders = new List<Order>()
+        {
+           new Order(){
+               Pizzas = new List<Pizza>(){
+               Pizzas.Find(p=> p.Name == "Meat Lovers")
+               }
+           }
+        };
 
     }
 }
