@@ -29,6 +29,7 @@ namespace pizza_shack.Models
                         //adds it to a running total
                         //once it's finished we have the total price for all individual toppings and is added
                         //to the size of the pizza plus the base price
+                        //this still returns null
             }
         }
     }
