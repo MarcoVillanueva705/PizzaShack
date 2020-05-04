@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using pizza_shack.Mock;
 
 namespace pizza_shack.Models
 {
@@ -11,21 +12,26 @@ namespace pizza_shack.Models
 
        public PizzaSizes Size { get; set; }
 
-        Pizza Pizza { get; }
-
       
     public Pizza FulfillRequest()
     {
-        ToppingNames.ForEach(topping =>
+        Pizza pizza = new Pizza();
+        pizza.Name = Name;
+        ToppingNames.ForEach(t =>
         {
-            System.Console.WriteLine(topping);
+           
+           if( fakeDb.AvailToppings.TryGetValue(t, out Topping topping))
+            {
+                pizza.Toppings.Add(topping);
+            }
         });
+        return pizza;
     }
 
     }
     public class Order
     {
-        public List<Pizza> Pizzas { get; set; }
+        public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
 
         public decimal TotalPrice
         {

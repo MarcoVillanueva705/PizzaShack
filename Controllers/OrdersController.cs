@@ -18,7 +18,9 @@ namespace pizza_shack.Controllers
         [HttpPost]
         public ActionResult<Order> Create([FromBody] List<OrderRequest> request)
         {
-            return null;
+            Order o = new Order();
+            request.ForEach(r => o.Pizzas.Add(r.FulfillRequest()));
+            return o;
         }
     }
 }
