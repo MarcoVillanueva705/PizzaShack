@@ -10,14 +10,18 @@ namespace pizza_shack.Models
         public List<string> ToppingNames { get; set; }
 
        public PizzaSizes Size { get; set; }
-       
+
         Pizza Pizza { get; }
 
-        public OrderRequest()
+      
+    public Pizza FulfillRequest()
+    {
+        ToppingNames.ForEach(topping =>
         {
+            System.Console.WriteLine(topping);
+        });
+    }
 
-        }
-    
     }
     public class Order
     {

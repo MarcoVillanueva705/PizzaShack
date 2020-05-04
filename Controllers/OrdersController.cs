@@ -16,9 +16,9 @@ namespace pizza_shack.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Order> Create([FromBody] Order o)
+        public ActionResult<Order> Create([FromBody] List<OrderRequest> request)
         {
-            return o;
+            return null;
         }
     }
 }
