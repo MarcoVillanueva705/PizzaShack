@@ -5,7 +5,13 @@ namespace pizza_shack.Models
 {
     public class OrderRequest
     {
-        List<Pizza> Pizzas { get; set; }
+        public string Name { get; set; }
+
+        public List<string> ToppingNames { get; set; }
+
+       public PizzaSizes Size { get; set; }
+       
+        Pizza Pizza { get; }
 
         public OrderRequest()
         {
