@@ -37,7 +37,7 @@ namespace pizza_shack.Mock
             new Pizza() {
                 Name= "Pepperoni",
                 Toppings = new List<Topping>() {
-                    AvailToppings.GetValueOrDefault("pepperoni")
+                    AvailToppings.GetValueOrDefault("pep")
                 }
             },
 
@@ -46,7 +46,7 @@ namespace pizza_shack.Mock
                 Toppings = new List<Topping>(){
                     AvailToppings.GetValueOrDefault("ham"),
                     AvailToppings.GetValueOrDefault("bacon"),
-                    AvailToppings.GetValueOrDefault("pepperoni"),
+                    AvailToppings.GetValueOrDefault("pep"),
                 }
             }
 
