@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using pizza_shack.Mock;
@@ -25,6 +26,13 @@ namespace pizza_shack.Models
                 pizza.Toppings.Add(topping);
             }
         });
+
+        if(Size < PizzaSizes.Personal || Size > PizzaSizes.Family)
+        {
+            throw new Exception("Please select a valid size");
+        }
+        pizza.Size = Size;
+
         return pizza;
     }
 
