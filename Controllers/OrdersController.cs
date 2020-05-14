@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using pizza_shack.Mock;
@@ -19,8 +20,20 @@ namespace pizza_shack.Controllers
         public ActionResult<Order> Create([FromBody] List<OrderRequest> request)
         {
             Order o = new Order();
+            try
+            {
             request.ForEach(r => o.Pizzas.Add(r.FulfillRequest()));
             return o;
+            }
+        
+            catch (Exception e)
+            {
+            return BadRequest(new 
+            {
+                error = e.Message,
+                StatusCode = 400
+            });
+            }
         }
     }
 }
